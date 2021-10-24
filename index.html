@@ -53,8 +53,10 @@
 				companyName: "KLAYGAMES",
 				productName: "KFLIGHTIO",
 				productVersion: "0.1",
-			}).then(function (instance) {
-				var canvas = instance.Module.canvas;
+			}).then((unityInstance) => {
+                window.unityInstance = unityInstance;
+				var canvas = unityInstance.Module.canvas;
+
 				var container = canvas.parentElement;
 				function onResize() {
 					var w;
@@ -91,7 +93,24 @@
 				onResize();
 			});
 		</script>
-	</div>
+      <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-database.js"></script>
+
+      <script>
+          var firebaseConfig = {
+            apiKey: "AIzaSyABGB_1ByeaS0O8x_-Sa3F6c4aM3amSr6k",
+            authDomain: "klayflight.firebaseapp.com",
+            databaseURL: "https://klayflight-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "klayflight",
+            storageBucket: "klayflight.appspot.com",
+            messagingSenderId: "220548561896",
+            appId: "1:220548561896:web:8c4f88beff8c95a83f425d"   
+         };
+
+          firebase.initializeApp(firebaseConfig);
+      </script>
+
 </body>
 
 </html>
